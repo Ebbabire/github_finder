@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <nav className="navbar bg-neutral shadow-lg mb-12 text-neutral-content ">
+    <nav className="navbar bg-[#EE4E34] shadow-xl mb-12 text-primary-content ">
       <div className="container justify-between mx-auto ">
         <div className="flex  align-middle px-2 mx-2">
           <FaGithub className="text-3xl pr-2" />
