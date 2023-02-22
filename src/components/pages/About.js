@@ -11,10 +11,10 @@ const About = () => {
         Version <span className="text-green-500">1.0.0</span>
       </p>
       <p className="text-lg text-black px-6">
-        Layout By:
-        <a className="text-green-500" href="#">
-          Hassib Moddasser
-        </a>
+        Layout By:{' '}
+        <span className="text-green-500" href="#">
+          Ebba Birhanu
+        </span>
       </p>
     </>
   );
