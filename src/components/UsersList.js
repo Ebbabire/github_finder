@@ -1,14 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
 import User from '../components/User';
 import userContext from '../store/UserContext';
 
 const UsersList = () => {
-  const { users, loading, error, searchUser } = useContext(userContext);
-
-  useEffect(() => {
-    searchUser();
-  }, []);
+  const { users, loading, error } = useContext(userContext);
 
   return (
     <>
