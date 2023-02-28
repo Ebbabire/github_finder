@@ -1,12 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
+import userContext from '../store/UserContext';
 
 const SearchBar = () => {
   const inputRef = useRef('');
+  const { searchUser } = useContext(userContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     const enteredValue = inputRef.current.value;
-    console.log(enteredValue);
+    if (!enteredValue) {
+      alert('please enter a name');
+    } else {
+      searchUser(enteredValue);
+    }
   };
 
   return (
