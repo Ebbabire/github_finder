@@ -1,29 +1,36 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useState } from 'react';
 import userContext from '../store/UserContext';
+import Alert from './Alert';
 
 const SearchBar = () => {
-  const inputRef = useRef('');
+  const [input, setInput] = useState('');
+  const [inputError, setInputError] = useState(null);
+
   const { clearUser, searchUser, users } = useContext(userContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const enteredValue = inputRef.current.value;
-    if (!enteredValue) {
-      alert('please enter a name');
+    if (input === '') {
+      setInputError(true);
+      setTimeout(() => {
+        setInputError(false);
+      }, 3000);
     } else {
-      searchUser(enteredValue);
+      searchUser(input);
     }
   };
 
   return (
     <>
+      {inputError && <Alert msg={'please enter a name'} />}
       <form onSubmit={submitHandler}>
         <input
-          ref={inputRef}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
           type="search"
           name="search"
-          className=" w-8/12 h-12 bg-slate-50 rounded-lg border border-black px-4"
+          className=" w-8/12 h-12 bg-slate-50 rounded-lg border text-black text-lg border-black px-4"
           placeholder="search"
         />
         <button
