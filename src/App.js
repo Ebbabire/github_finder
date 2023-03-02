@@ -1,8 +1,8 @@
 import NavBar from './layout/NavBar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NotFound from './components/pages/NotFound';
-import Home from './components/pages/Home';
-import About from './components/pages/About';
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import About from './pages/About';
 import Footer from './layout/Footer';
 import { UserContextProvider } from './store/UserContext';
 

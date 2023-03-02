@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchBar from '../SearchBar';
-import UsersList from '../UsersList';
+import SearchBar from '../components/SearchBar';
+import UsersList from '../components/UsersList';
 
 const Home = () => {
   return (

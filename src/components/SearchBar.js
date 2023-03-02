@@ -13,12 +13,14 @@ const SearchBar = () => {
 
     if (input === '') {
       setInputError(true);
+      clearUser();
       setTimeout(() => {
         setInputError(false);
       }, 3000);
     } else {
       searchUser(input);
     }
+    setInput('');
   };
 
   return (
