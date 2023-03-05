@@ -6,14 +6,14 @@ const SearchBar = () => {
   const [input, setInput] = useState('');
   const [inputError, setInputError] = useState(null);
 
-  const { clearUser, searchUser, users } = useContext(userContext);
+  const { clearUsersList, searchUser, users } = useContext(userContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     if (input === '') {
       setInputError(true);
-      clearUser();
+      clearUsersList();
       setTimeout(() => {
         setInputError(false);
       }, 3000);
@@ -47,7 +47,7 @@ const SearchBar = () => {
           <button
             type="submit"
             className="w-12 justify-center flex items-center rounded-md mx-4 bg-black hover:bg-slate-600"
-            onClick={clearUser}
+            onClick={clearUsersList}
           >
             clear
           </button>
